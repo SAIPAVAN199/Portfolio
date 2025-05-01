@@ -1,3 +1,5 @@
+/* --- Global Reset & Base Styles --- */
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f4f9;
@@ -25,6 +27,8 @@ h1 {
 p {
   color: #666;
 }
+
+/* --- Project Section --- */
 
 .projects-section {
   max-width: 900px;
@@ -110,27 +114,68 @@ h2 {
   filter: none;
 }
 
-/* --- Responsive Tweaks --- */
-@media (max-width: 600px) {
+/* --- Responsive Design (Tablets & Phones) --- */
+
+@media (max-width: 768px) {
   h1 {
-    font-size: 1.5em;
+    font-size: 1.6em;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  header, footer {
+    padding: 20px 15px;
   }
 
   .project-card {
-    padding: 15px;
+    padding: 16px;
+    margin: 15px;
   }
 
   .view-button {
-    padding: 8px 12px;
+    padding: 8px 14px;
     font-size: 0.9em;
   }
 
   .social-icons {
-    gap: 15px;
+    gap: 18px;
+    flex-wrap: wrap;
   }
 
   .social-icons img {
     width: 36px;
     height: 36px;
+  }
+
+  .contact-section {
+    padding: 40px 15px;
+  }
+
+  .projects-section {
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.4em;
+  }
+
+  .view-button {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .social-icons img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .contact-section p {
+    font-size: 14px;
   }
 }
