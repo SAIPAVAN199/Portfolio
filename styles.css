@@ -1,5 +1,16 @@
-/* --- Global Reset & Base Styles --- */
+/* --- Fade-In Animation --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+/* --- Global Reset & Base Styles --- */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f4f9;
@@ -8,6 +19,26 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Fade-in animations applied */
+.projects-section,
+.contact-section {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+  animation-delay: 0.3s;
+}
+
+.project-card {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+  animation-delay: 0.6s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 header, footer {
@@ -29,7 +60,6 @@ p {
 }
 
 /* --- Project Section --- */
-
 .projects-section {
   max-width: 900px;
   padding: 40px 20px;
@@ -67,14 +97,15 @@ h2 {
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .view-button:hover {
   background-color: #1b5fc0;
+  transform: scale(1.05);
 }
 
 /* --- Contact Section Styling --- */
-
 .contact-section {
   text-align: center;
   padding: 60px 20px;
@@ -115,7 +146,6 @@ h2 {
 }
 
 /* --- Responsive Design (Tablets & Phones) --- */
-
 @media (max-width: 768px) {
   h1 {
     font-size: 1.6em;
